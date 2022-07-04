@@ -119,7 +119,6 @@ class _PostTileState extends State<PostTile> {
             ]),
           ),
           Container(
-            
             child: Column(children: [
               Container(
                 margin: EdgeInsets.only(
@@ -134,27 +133,36 @@ class _PostTileState extends State<PostTile> {
                       onPressed: () {},
                       icon: SvgPicture.asset(
                         'assets/icons/Map Border.svg',
+                        height: 30,
                       ),
                     ),
                     IconButton(
                       onPressed: () {},
-                      icon: SvgPicture.asset('assets/icons/Comment.svg'),
+                      icon: SvgPicture.asset(
+                        'assets/icons/Comment.svg',
+                        height: 30,
+                      ),
                     ),
                     IconButton(
                       onPressed: post.toggleLike,
                       icon: post.isLiked
                           ? SvgPicture.asset(
                               'assets/icons/Heart.svg',
+                              height: 30,
                               color: Colors.red,
                             )
                           : SvgPicture.asset(
                               'assets/icons/Heart Border.svg',
+                              height: 30,
                               color: Colors.black,
                             ),
                     ),
                     IconButton(
                         onPressed: () {},
-                        icon: SvgPicture.asset('assets/icons/Share.svg')),
+                        icon: SvgPicture.asset(
+                          'assets/icons/Share.svg',
+                          height: 30,
+                        )),
                   ],
                 ),
               ),
@@ -165,12 +173,10 @@ class _PostTileState extends State<PostTile> {
                     right: sizeGuide(size.height).getS(),
                     bottom: sizeGuide(size.height).getS()),
                 alignment: Alignment.centerLeft,
-                
                 child: ExpandableText(
                   '${post.caption!.text}',
                   textAlign: TextAlign.start,
                   maxLines: 2,
-                  
                   prefixText: '${post.author!.username}',
                   prefixStyle: TextStyle(fontWeight: FontWeight.bold),
                   expandText: 'more',
@@ -178,7 +184,6 @@ class _PostTileState extends State<PostTile> {
                   expandOnTextTap: true,
                   linkColor: Colors.black26,
                 ),
-                
               ),
               Container(
                 height: post.tags != null ? 40 : 0,
